@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public abstract class Base {
 
-    protected ChromeDriver driver;
+    public ChromeDriver driver;
     protected WebDriverWait wait;
     //System.getProperty("user.dir") + "\resources\drivers\chromedriver.exe"
 

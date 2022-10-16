@@ -16,7 +16,8 @@ public class CartSteps {
         mainPage.isAt();
         mainPage.addTwoRandomItemsToCart();
         mainPage.moveToSecondPage();
-        secondPage  = mainPage.getSecondPage();
+        secondPage = new SecondPage(mainPage.driver);
+        secondPage.initChromeInstance();
         secondPage.isAt();
         secondPage.addTwoRandomItemsToCartSecondPage();
     }
