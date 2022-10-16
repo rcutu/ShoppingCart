@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
-        glue = "selenium",
+        glue = "com.shopping",
         tags = "@RunDev",
         plugin = {
                 "pretty",

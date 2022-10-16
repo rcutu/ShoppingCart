@@ -1,7 +1,8 @@
 Feature: Create and edit cart
 
+  @RunDev
   Scenario: Add 4 items to the cart and delete the cheapest one
-#    Given I add four random items to my cart
+    Given I add four random items to my cart
 #    When I view my cart
 #    Then I find total four items listed in my cart
 #    When I search for lowest price item
