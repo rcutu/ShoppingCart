@@ -12,27 +12,25 @@ import java.util.List;
 
 public class SecondPage extends Base {
 
-    public SecondPage(ChromeDriver driver) {
-        this.driver = driver;
-    }
     @FindBy(xpath = "//*[@class='button product_type_simple add_to_cart_button ajax_add_to_cart']")
-    private List<WebElement> addToCartBtns;
+    private List<WebElement> secondPageCartBtns;
 
     @FindBy(xpath = "//*[@id='page']/header/nav/text()")
     private WebElement secondPageNumber;
 
     public void addTwoRandomItemsToCartSecondPage() throws InterruptedException {
         for (int i = 0; i < 2; i++) {
-            Collections.shuffle(addToCartBtns);
-            addToCartBtns.get(0).click();
+            Collections.shuffle(secondPageCartBtns);
+            secondPageCartBtns.get(0).click();
             Thread.sleep(1000);
         }
     }
 
-    public void initChromeInstance() {
-        PageFactory.initElements(this.driver, this);
+    public void initChromeInstance(ChromeDriver driver) {
+        PageFactory.initElements(driver, this);
+        this.driver = driver;
     }
-
+    @Override
     public void isAt() {
         this.wait.until(driver -> this.secondPageNumber.isDisplayed());
     }

@@ -1,0 +1,6 @@
+com\shopping\TestRunner.class
+com\shopping\page\katalon\MainPage.class
+com\shopping\page\Base.class
+com\shopping\steps\CartSteps.class
+com\shopping\page\katalon\CartPage.class
+com\shopping\page\katalon\SecondPage.class

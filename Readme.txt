@@ -1,0 +1,1 @@
+Run the scenario by right-clicking TestRunner -> Run (with JUnit)

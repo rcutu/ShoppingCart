@@ -25,10 +25,6 @@ public class MainPage extends Base {
         this.wait.until(driver -> this.title.isDisplayed());
     }
 
-    public SecondPage getSecondPage() {
-        return new SecondPage();
-    }
-
     public void addTwoRandomItemsToCart() throws InterruptedException {
         for (int i = 0; i < 2; i++) {
             Random random = new Random();
@@ -37,8 +33,9 @@ public class MainPage extends Base {
         }
     }
 
-    public void moveToSecondPage() {
+    public void moveToSecondPage() throws InterruptedException {
         this.nextPageBtn.click();
+        Thread.sleep(2000);
     }
 
     public void goToMainPageUrl() {

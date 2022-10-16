@@ -11,7 +11,6 @@ public abstract class Base {
 
     public ChromeDriver driver;
     protected WebDriverWait wait;
-    //System.getProperty("user.dir") + "\resources\drivers\chromedriver.exe"
 
     public void initChrome() {
         String path = System.getProperty("user.dir") + "/src/main/resources/drivers/chromedriver.exe";
