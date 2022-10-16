@@ -1,10 +1,14 @@
 package com.shopping.page.katalon;
 
 import com.shopping.page.Base;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class MainPage extends Base {
 
@@ -26,11 +30,20 @@ public class MainPage extends Base {
     }
 
     public void addTwoRandomItemsToCart() throws InterruptedException {
-        for (int i = 0; i < 2; i++) {
-            Random random = new Random();
-            addToCartBtns.get(random.nextInt(addToCartBtns.size())).click();
-            Thread.sleep(1000);
-        }
+        Actions action = new Actions(this.driver);
+        List<WebElement> itemsToAdd = pickNRandom(addToCartBtns, 2);
+        Thread.sleep(1000);
+        action.moveToElement(itemsToAdd.get(0));
+        itemsToAdd.get(0).click();
+        action.moveToElement(itemsToAdd.get(1));
+        Thread.sleep(1000);
+        itemsToAdd.get(1).click();
+    }
+
+    public static List<WebElement> pickNRandom(List<WebElement> lst, int n) {
+        List<WebElement> copy = new ArrayList<WebElement>(lst);
+        Collections.shuffle(copy);
+        return n > copy.size() ? copy.subList(0, copy.size()) : copy.subList(0, n);
     }
 
     public void moveToSecondPage() throws InterruptedException {
